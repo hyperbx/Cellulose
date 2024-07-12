@@ -1,9 +1,9 @@
 #pragma once
 
-#include "AnimationBankEditorLocale.h"
-#include "CastInstanceEditorLocale.h"
-#include "FontListLocale.h"
-#include "GridOptionsLocale.h"
+#include "Locales\AnimationBankEditorLocale.h"
+#include "Locales\CastInstanceEditorLocale.h"
+#include "Locales\FontListLocale.h"
+#include "Locales\GridOptionsLocale.h"
 
 class CseDialog
 {

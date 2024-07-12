@@ -98,7 +98,7 @@
     <ClInclude Include="Locales\AnimationBankEditorLocale.h" />
     <ClInclude Include="Locales\BackstageLocale.h" />
     <ClInclude Include="Locales\CastPropertiesLocale.h" />
-    <ClInclude Include="Locales\CellSpriteEditor.h" />
+    <ClInclude Include="CellSpriteEditor.h" />
     <ClInclude Include="Locales\CropListLocale.h" />
     <ClInclude Include="Dependencies\Detours\include\detours.h" />
     <ClInclude Include="Dependencies\Detours\include\detver.h" />
@@ -108,8 +108,8 @@
     <ClInclude Include="Helpers.h" />
     <ClInclude Include="Locales\NewProjectLocale.h" />
     <ClInclude Include="Locales\CastInstanceEditorLocale.h" />
-    <ClInclude Include="Locales\CseDialog.h" />
-    <ClInclude Include="Locales\CseFile.h" />
+    <ClInclude Include="CseDialog.h" />
+    <ClInclude Include="CseFile.h" />
     <ClInclude Include="Pch.h" />
     <ClInclude Include="Locales\PictureListLocale.h" />
     <ClInclude Include="Locales\PictureLocale.h" />

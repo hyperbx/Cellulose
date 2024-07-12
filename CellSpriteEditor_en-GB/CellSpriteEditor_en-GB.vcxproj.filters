@@ -22,9 +22,9 @@
     <ClInclude Include="Locales\FontListLocale.h" />
     <ClInclude Include="Locales\PlaybackControlsLocale.h" />
     <ClInclude Include="Locales\FilterLocale.h" />
-    <ClInclude Include="Locales\CellSpriteEditor.h" />
-    <ClInclude Include="Locales\CseDialog.h" />
-    <ClInclude Include="Locales\CseFile.h" />
+    <ClInclude Include="CellSpriteEditor.h" />
+    <ClInclude Include="CseDialog.h" />
+    <ClInclude Include="CseFile.h" />
     <ClInclude Include="Locales\CastInstanceEditorLocale.h" />
     <ClInclude Include="Locales\GridOptionsLocale.h" />
     <ClInclude Include="Locales\AnimationBankEditorLocale.h" />

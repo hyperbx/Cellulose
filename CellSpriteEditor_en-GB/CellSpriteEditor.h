@@ -1,15 +1,15 @@
 #pragma once
 
-#include "NewProjectLocale.h"
-#include "PictureLocale.h"
-#include "PictureListLocale.h"
-#include "CropListLocale.h"
-#include "BackstageLocale.h"
-#include "CastPropertiesLocale.h"
-#include "TimelineLocale.h"
-#include "FontListLocale.h"
-#include "PlaybackControlsLocale.h"
-#include "FilterLocale.h"
+#include "Locales\NewProjectLocale.h"
+#include "Locales\PictureLocale.h"
+#include "Locales\PictureListLocale.h"
+#include "Locales\CropListLocale.h"
+#include "Locales\BackstageLocale.h"
+#include "Locales\CastPropertiesLocale.h"
+#include "Locales\TimelineLocale.h"
+#include "Locales\FontListLocale.h"
+#include "Locales\PlaybackControlsLocale.h"
+#include "Locales\FilterLocale.h"
 
 class CellSpriteEditor
 {

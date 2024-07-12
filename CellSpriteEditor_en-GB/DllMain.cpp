@@ -1,8 +1,8 @@
 #pragma comment(linker, "/EXPORT:Direct3DCreate8=C:\\Windows\\System32\\d3d8.Direct3DCreate8")
 
-#include "Locales\CellSpriteEditor.h"
-#include "Locales\CseDialog.h"
-#include "Locales\CseFile.h"
+#include "CellSpriteEditor.h"
+#include "CseDialog.h"
+#include "CseFile.h"
 
 static void Init()
 {
