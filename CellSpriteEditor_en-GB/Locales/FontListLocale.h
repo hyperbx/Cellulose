@@ -1,5 +1,23 @@
 #pragma once
 
+static void __declspec(naked) DecoupleCharColumnWidth()
+{
+	static void* returnAddr = (void*)0x41AD19;
+
+	__asm
+	{
+		push edx
+		push 2
+		push 0x101B
+
+		/* Set column width for
+		   Picture ID and Crop ID */
+		mov  ebp, 68
+
+		jmp  [returnAddr]
+	}
+}
+
 class FontListLocale
 {
 public:
@@ -17,10 +35,12 @@ public:
 		WRITE_MEMORY(0x41AD58, const char*, "Crop ID");
 
 		// Change column widths.
-		WRITE_MEMORY(0x41ACD1, int, 64);
-		WRITE_MEMORY(0x41ACEE, int, 64);
+		WRITE_MEMORY(0x41BEF4, int, 52); // Type
+		WRITE_MEMORY(0x41ACD1, int, 40); // Code
+		WRITE_MEMORY(0x41ACEE, int, 40); // Char
 		WRITE_MEMORY(0x41AD22, int, 0);
 		WRITE_MEMORY(0x41AD4C, int, 0);
+		WRITE_JUMP(0x41AD11, &DecoupleCharColumnWidth);
 	}
 
 	static void InstallCseDialog(size_t in_base)
