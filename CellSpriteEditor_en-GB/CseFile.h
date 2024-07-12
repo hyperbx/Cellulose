@@ -23,7 +23,7 @@ public:
 		WRITE_MEMORY(pModuleBase + 0x3958, const char*, "An error occurred whilst loading the project file.");
 		WRITE_MEMORY(pModuleBase + 0x9AC7, const char*, "Failed to load font: %s");
 
-		// Window captions.
+		// Captions.
 		WRITE_MEMORY(pModuleBase + 0x2CF6, const char*, "Open Project...");
 		WRITE_MEMORY(pModuleBase + 0x3078, const char*, "Save As...");
 		WRITE_MEMORY(pModuleBase + 0x9AE0, const char*, "Load Font...");

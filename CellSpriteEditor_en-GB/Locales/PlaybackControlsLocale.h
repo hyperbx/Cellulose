@@ -2,7 +2,7 @@
 
 class PlaybackControlsLocale
 {
-	inline static int m_playbackControlsFilter[48] =
+	inline static int m_strPlaybackControlsFilters[48] =
 	{
 		0xFFF,  (int)"All",
 		0,      (int)"------------------",
@@ -34,6 +34,6 @@ public:
 	static void InstallCse()
 	{
 		for (int i = 0; i < 48; i++)
-			WRITE_MEMORY(0x4524C0 + i * sizeof(int), int, m_playbackControlsFilter[i]);
+			WRITE_MEMORY(0x4524C0 + i * sizeof(int), int, m_strPlaybackControlsFilters[i]);
 	}
 };
