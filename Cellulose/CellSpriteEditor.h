@@ -213,8 +213,16 @@ public:
 		return originalMyIsDlgButtonChecked(dlg, id);
 	}
 
+	inline static void __fastcall SetRecalculateCropSize(void* wnd, void* _, int id, BOOL state)
+	{
+		const auto hwnd = *reinterpret_cast<HWND*>(static_cast<char*>(wnd) + 0x20);
+		FileDialogHandler::wnd_handlers.find(hwnd)->second->customize->SetControlState(id, state ? CDCS_ENABLEDVISIBLE : CDCS_VISIBLE);
+	}
+
 	static void Init()
 	{
+		WRITE_NOP(0x0041F3DF, 7);
+		WRITE_CALL(0x0041F3DA, SetRecalculateCropSize);
 		INSTALL_HOOK(MyGetOpenFileNameA);
 		INSTALL_HOOK(MyCheckDlgButton);
 		INSTALL_HOOK(MyIsDlgButtonChecked);
