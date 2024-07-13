@@ -72,7 +72,8 @@
       <AdditionalLibraryDirectories>$(ProjectDir)Dependencies\Detours\lib\x86</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(TargetPath)" "E:\CellSpriteEdit\CellSpriteEditor_15103h_full\CellSpriteEditor_15103h_full\d3d8.dll"</Command>
+      <Command>move "$(TargetPath)" "$(TargetDir)d3d8.dll"
+powershell -ExecutionPolicy Bypass -Command "cd \"$(ProjectDir)Resources\" ; .\link.ps1 -Configuration $(Configuration)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -98,9 +99,16 @@
       <AdditionalDependencies>detours.lib;syelog.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)Dependencies\Detours\lib\x86</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>move "$(TargetPath)" "$(TargetDir)d3d8.dll"
+powershell -ExecutionPolicy Bypass -Command "cd \"$(ProjectDir)Resources\" ; .\link.ps1 -Configuration $(Configuration)"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Configuration.h" />
     <ClInclude Include="CropPropertyEdit.h" />
+    <ClInclude Include="Dependencies\INIReader.h" />
+    <ClInclude Include="DialogHelpers.h" />
     <ClInclude Include="FileRender.h" />
     <ClInclude Include="Locales\AnimationBankLocale.h" />
     <ClInclude Include="Locales\BackstageLocale.h" />
@@ -124,10 +132,14 @@
     <ClInclude Include="Locales\PlaybackControlsLocale.h" />
     <ClInclude Include="Locales\TimelineLocale.h" />
     <ClInclude Include="PlaneText.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="ResourceRedirector.h" />
     <ClInclude Include="StageAccess.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Configuration.cpp" />
     <ClCompile Include="DllMain.cpp" />
+    <ClCompile Include="ResourceRedirector.cpp" />
     <ClInclude Include="Locales\GridOptionsLocale.h" />
     <ClCompile Include="Pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

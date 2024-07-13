@@ -11,9 +11,12 @@
 static void Init()
 {
 	CellSpriteEditor::Init();
+
 	CellSpriteEditor::InstallLocales();
 	CseDialog::InstallLocales();
 	CseFile::InstallLocales();
+
+	ResourceRedirector::Install();
 }
 
 static void OnPluginLoad(const char* in_pFileName)
@@ -39,14 +42,20 @@ HOOK(int, __fastcall, LoadPlugin, 0x427EF0, void* in_pThis, void* _, const char*
 	return originalLoadPlugin(in_pThis, _, in_pFileName, in_a3);
 }
 
-BOOL WINAPI DllMain(_In_ HINSTANCE instance, _In_ DWORD reason, _In_ LPVOID reserved)
+BOOL WINAPI DllMain(HINSTANCE in_hInstance, DWORD in_fdwReason, LPVOID in_lpvReserved)
 {
-	switch (reason)
+	switch (in_fdwReason)
 	{
 		case DLL_PROCESS_ATTACH:
+		{
+			Configuration::Read();
+
 			Init();
+
 			INSTALL_HOOK(LoadPlugin);
+
 			break;
+		}
 
 		case DLL_PROCESS_DETACH:
 		case DLL_THREAD_ATTACH:

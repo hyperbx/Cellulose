@@ -65,10 +65,9 @@ public:
 	INLINE_HOOK(BOOL, WINAPI, MyGetOpenFileNameA, PROC_ADDRESS("COMDLG32", "GetOpenFileNameA"), OPENFILENAMEA* arg)
 	{
 		ComPtr<IFileOpenDialog> ofn{};
+
 		if (!SUCCEEDED(CoCreateInstance(CLSID_FileOpenDialog, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&ofn))))
-		{
 			return FALSE;
-		}
 		
 		ComPtr<IExplorerBrowserEvents> explorerEvents{};
 		ofn->QueryInterface(IID_PPV_ARGS(&explorerEvents));
@@ -79,6 +78,7 @@ public:
 		std::vector<std::wstring> strings{};
 
 		const auto* cFilter = arg->lpstrFilter;
+
 		if (cFilter)
 		{
 			while (*cFilter)
@@ -102,9 +102,7 @@ public:
 			SHCreateItemFromParsingName(initialDir.c_str(), nullptr, IID_PPV_ARGS(&folder));
 
 			if (folder)
-			{
 				ofn->SetFolder(folder.Get());
-			}
 		}
 
 		ofn->SetFileName(fileName.c_str());
@@ -152,9 +150,7 @@ public:
 				current += (wcslen(itemTitle) + 1) * sizeof(wchar_t);
 
 				if (item->style & BS_CHECKBOX)
-				{
 					customize->AddCheckButton(item->id, itemCls, FALSE);
-				}
 			}
 		}
 
@@ -168,19 +164,16 @@ public:
 		ofn->Advise(handler, &handlerCookie);
 
 		if (!SUCCEEDED(ofn->Show(arg->hwndOwner)))
-		{
 			return FALSE;
-		}
 
 		ComPtr<IShellItem> result{};
 		ofn->GetResult(&result);
 
 		wchar_t* path{};
 		result->GetDisplayName(SIGDN_FILESYSPATH, &path);
+
 		if (!path)
-		{
 			return FALSE;
-		}
 
 		WideCharToMultiByte(CP_ACP, 0, path, wcslen(path), arg->lpstrFile, arg->nMaxFile, nullptr, nullptr);
 		CoTaskMemFree(path);
@@ -191,6 +184,7 @@ public:
 	INLINE_HOOK(BOOL, WINAPI, MyCheckDlgButton, PROC_ADDRESS("USER32", "CheckDlgButton"), HWND dlg, int id, UINT checked)
 	{
 		const auto handler = FileDialogHandler::wnd_handlers.find(dlg);
+
 		if (handler != FileDialogHandler::wnd_handlers.end())
 		{
 			handler->second->customize->SetCheckButtonState(id, checked);
@@ -203,6 +197,7 @@ public:
 	INLINE_HOOK(UINT, WINAPI, MyIsDlgButtonChecked, PROC_ADDRESS("USER32", "IsDlgButtonChecked"), HWND dlg, int id)
 	{
 		const auto handler = FileDialogHandler::wnd_handlers.find(dlg);
+
 		if (handler != FileDialogHandler::wnd_handlers.end())
 		{
 			BOOL checked{};
@@ -216,13 +211,22 @@ public:
 	inline static void __fastcall SetRecalculateCropSize(void* wnd, void* _, int id, BOOL state)
 	{
 		const auto hwnd = *reinterpret_cast<HWND*>(static_cast<char*>(wnd) + 0x20);
+
 		FileDialogHandler::wnd_handlers.find(hwnd)->second->customize->SetControlState(id, state ? CDCS_ENABLEDVISIBLE : CDCS_VISIBLE);
 	}
 
 	static void Init()
 	{
-		WRITE_NOP(0x0041F3DF, 7);
-		WRITE_CALL(0x0041F3DA, SetRecalculateCropSize);
+#if _DEBUG
+		INIT_CONSOLE();
+#endif
+		// Disable license authentication.
+		WRITE_MEMORY(0x439430, uint8_t, 0x31, 0xC0, 0xC3);
+
+		WRITE_NOP(0x41F3DF, 7);
+
+		WRITE_CALL(0x41F3DA, SetRecalculateCropSize);
+
 		INSTALL_HOOK(MyGetOpenFileNameA);
 		INSTALL_HOOK(MyCheckDlgButton);
 		INSTALL_HOOK(MyIsDlgButtonChecked);

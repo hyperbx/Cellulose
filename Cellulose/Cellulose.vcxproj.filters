@@ -34,10 +34,16 @@
     <ClInclude Include="PlaneText.h" />
     <ClInclude Include="StageAccess.h" />
     <ClInclude Include="Dependencies\INIReader.h" />
+    <ClInclude Include="Configuration.h" />
+    <ClInclude Include="ResourceRedirector.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="DialogHelpers.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DllMain.cpp" />
     <ClCompile Include="Pch.cpp" />
+    <ClCompile Include="Configuration.cpp" />
+    <ClCompile Include="ResourceRedirector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Dependencies">

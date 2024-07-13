@@ -1,10 +1,12 @@
 #pragma once
+
 #include <combaseapi.h>
 #include <map>
 
 class FileDialogHandler;
 
 using namespace Microsoft::WRL;
+
 template<typename T>
 class TUnknown : public IUnknown
 {

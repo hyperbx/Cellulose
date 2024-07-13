@@ -93,6 +93,10 @@
 		exit(-1); \
 	}
 
+#define INIT_CONSOLE() \
+    AllocConsole(); \
+    freopen("CONOUT$", "w", stdout);
+
 inline std::wstring MakeWideString(const char* pStr, uint32_t cp = CP_SHIFT_JIS)
 {
     if (!pStr)
@@ -107,4 +111,43 @@ inline std::wstring MakeWideString(const char* pStr, uint32_t cp = CP_SHIFT_JIS)
 
     MultiByteToWideChar(cp, 0, pStr, len, buffer.data(), bufLen);
     return buffer;
+}
+
+inline std::string GetSubstringBeforeLastChar(const std::string str, char c, int cIndex = 0)
+{
+    std::string result;
+    const size_t index = str.rfind(c);
+
+    if (std::string::npos != index)
+        result = str.substr(0, index);
+
+    for (int i = 0; i < cIndex; i++)
+        return GetSubstringBeforeLastChar(result, c, i);
+
+    return result;
+}
+
+inline std::string GetSubstringAfterLastChar(const std::string& str, char c, int cIndex = 0)
+{
+    std::string result = str;
+    size_t index;
+
+    for (int i = 0; i <= cIndex; ++i)
+    {
+        index = result.rfind(c);
+
+        if (index == std::string::npos)
+            return "";
+
+        result = result.substr(index + 1);
+    }
+
+    return result;
+}
+
+inline bool FileExists(const std::string& path)
+{
+    struct stat buffer;
+
+    return stat(path.c_str(), &buffer) == 0;
 }
