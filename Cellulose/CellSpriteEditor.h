@@ -201,6 +201,41 @@ public:
 		return originalMyIsDlgButtonChecked(dlg, id);
 	}
 
+	INLINE_HOOK(PIDLIST_ABSOLUTE, WINAPI, MySHBrowseForFolderA, PROC_ADDRESS("SHELL32", "SHBrowseForFolderA"), BROWSEINFOA* info)
+	{
+		ComPtr<IFileOpenDialog> ofn{};
+
+		if (!SUCCEEDED(CoCreateInstance(CLSID_FileOpenDialog, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&ofn))))
+			return nullptr;
+
+		const auto title = MakeWideString(info->lpszTitle);
+
+		if (info->pszDisplayName)
+		{
+			ComPtr<IShellItem> folder{};
+			const auto initialDir = MakeWideString(info->pszDisplayName);
+			SHCreateItemFromParsingName(initialDir.c_str(), nullptr, IID_PPV_ARGS(&folder));
+
+			if (folder)
+				ofn->SetFolder(folder.Get());
+		}
+
+		ofn->SetTitle(title.c_str());
+		ofn->SetOptions(FOS_PICKFOLDERS);
+		ofn->Show(info->hwndOwner);
+
+		ComPtr<IShellItem> result{};
+		ofn->GetResult(&result);
+
+		wchar_t* path{};
+		result->GetDisplayName(SIGDN_FILESYSPATH, &path);
+
+		LPITEMIDLIST pidl{};
+		SHGetIDListFromObject(result.Get(), &pidl);
+
+		return pidl;
+	}
+
 	inline static void __fastcall SetRecalculateCropSize(void* wnd, void* _, int id, BOOL state)
 	{
 		const auto hwnd = *reinterpret_cast<HWND*>(static_cast<char*>(wnd) + 0x20);
@@ -220,6 +255,7 @@ public:
 		WRITE_CALL(0x41F3DA, SetRecalculateCropSize);
 
 		INSTALL_HOOK(MyGetOpenFileNameA);
+		INSTALL_HOOK(MySHBrowseForFolderA);
 		INSTALL_HOOK(MyCheckDlgButton);
 		INSTALL_HOOK(MyIsDlgButtonChecked);
 	}
