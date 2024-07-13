@@ -15,6 +15,6 @@ public:
 		WRITE_MEMORY(pModuleBase + 0x3183, const char*, "Plain &Text...");
 
 		// Messages.
-		WRITE_MEMORY(pModuleBase + 0x2E4D, const char*, "Choose a directory to output to.");
+		WRITE_MEMORY(pModuleBase + 0x2E4D, const char*, "Choose an output directory...");
 	}
 };

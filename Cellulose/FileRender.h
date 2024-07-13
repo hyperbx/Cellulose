@@ -19,7 +19,7 @@ public:
 		// Captions.
 		WRITE_MEMORY(pModuleBase + 0x1D82, const char*, m_strCommonCaption);
 		WRITE_MEMORY(pModuleBase + 0x1DA1, const char*, m_strCommonCaption);
-		WRITE_MEMORY(pModuleBase + 0x415C, const char, "Output directory...\0");
+		WRITE_MEMORY(pModuleBase + 0x415C, const char, "Choose an output directory...\0");
 
 		// Messages.
 		WRITE_MEMORY(pModuleBase + 0x191B, const char*, "Failed to create output directory.");

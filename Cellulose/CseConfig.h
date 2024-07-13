@@ -16,7 +16,7 @@ public:
 		FilterLocale::InstallCseConfig(pModuleBase);
 
 		// Messages.
-		WRITE_MEMORY(pModuleBase + 0x181D, const char*, "Choose a directory to output to.");
+		WRITE_MEMORY(pModuleBase + 0x181D, const char*, "Choose an output directory...");
 		WRITE_MEMORY(pModuleBase + 0x6FFE, const char*, "The co-ordinates of casts and their X and Y transforms will remain as they are, "
 			"even after changing the actual device resolution. Are you sure you want to continue?");
 

@@ -21,7 +21,12 @@ class NewProjectLocale
 public:
 	static void InstallCse()
 	{
+		// Captions.
+		WRITE_MEMORY(0x41E5CE, const char*, "Choose a texture list file...");
+
 		// Messages.
+		WRITE_MEMORY(0x41E2FD, const char*, "Choose a texture list directory...");
+		WRITE_MEMORY(0x41EB4D, const char*, "Choose a project directory...");
 		WRITE_MEMORY(0x41EFB5, const char*, "There is already a %s file at this location.\nDo you want to overwrite it?");
 
 		// Miscellaneous.

@@ -38,6 +38,7 @@ public:
 		WRITE_MEMORY(0x463414, const char, "Plugin &Tools (&T)");
 
 		// Captions.
+		WRITE_MEMORY(0x436C25, const char*, "Export Stage to Texture...");
 		WRITE_MEMORY(0x4368D0, const char*, "Texture List: Reference (%s%s.ctf)");
 		WRITE_MEMORY(0x4368F2, const char*, "Texture List: External (%s%s.ctf)");
 		WRITE_MEMORY(0x4368FD, const char*, "Texture List: Internal");
