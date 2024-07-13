@@ -37,6 +37,12 @@
     <ClInclude Include="Configuration.h" />
     <ClInclude Include="ResourceRedirector.h" />
     <ClInclude Include="DialogHelpers.h" />
+    <ClInclude Include="CseConfig.h" />
+    <ClInclude Include="CseCore.h" />
+    <ClInclude Include="CseDuplicate.h" />
+    <ClInclude Include="CseOption.h" />
+    <ClInclude Include="CseQuickSave.h" />
+    <ClInclude Include="CseUndo.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DllMain.cpp" />
