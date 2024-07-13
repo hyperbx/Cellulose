@@ -22,10 +22,15 @@ $dummyObj  = "..\obj\Win32\${Configuration}\rsrc.obj"
 # Create dummy object for resource DLLs.
 Invoke-Expression "cl /c rsrc.c /Fo""${dummyObj}"""
 
-foreach ($res in [System.IO.Directory]::EnumerateFiles($pwd, "*.res", 1))
+foreach ($res in [System.IO.Directory]::EnumerateFiles([System.IO.Path]::Combine($pwd, $Language), "*.res", 1))
 {
     $relativePath = Resolve-Path -Path $res -Relative
     $relativePath = $relativePath -Replace '^\.\\', ''
+
+    if ($relativePath -like "${Language}\*")
+    {
+        $relativePath = $relativePath.Substring($Language.Length, $relativePath.Length - $Language.Length)
+    }
 
     $outputPath = "..\bin\Win32\${Configuration}\res\${Language}\${relativePath}.dll"
     $outputDir  = [System.IO.Path]::GetDirectoryName($outputPath)
@@ -36,4 +41,7 @@ foreach ($res in [System.IO.Directory]::EnumerateFiles($pwd, "*.res", 1))
     }
 
     & link /DLL /NOENTRY /OUT:"${outputPath}" "${dummyObj}" "${res}"
+
+    echo "Created resource module: ${outputPath}"
+    echo ""
 }
