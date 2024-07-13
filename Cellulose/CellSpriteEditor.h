@@ -227,6 +227,11 @@ public:
 		ComPtr<IShellItem> result{};
 		ofn->GetResult(&result);
 
+		if (!result)
+		{
+			return nullptr;
+		}
+
 		wchar_t* path{};
 		result->GetDisplayName(SIGDN_FILESYSPATH, &path);
 
