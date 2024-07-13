@@ -398,5 +398,5 @@ FodyWeavers.xsd
 *.sln.iml
 
 # Deto
-!CellSpriteEditor_en-GB/Dependencies/Detours/lib/x64/
-!CellSpriteEditor_en-GB/Dependencies/Detours/lib/x86/
+!Cellulose/Dependencies/Detours/lib/x64/
+!Cellulose/Dependencies/Detours/lib/x86/
