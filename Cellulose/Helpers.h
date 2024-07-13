@@ -127,24 +127,6 @@ inline std::string GetSubstringBeforeLastChar(const std::string str, char c, int
     return result;
 }
 
-inline std::string GetSubstringAfterLastChar(const std::string& str, char c, int cIndex = 0)
-{
-    std::string result = str;
-    size_t index;
-
-    for (int i = 0; i <= cIndex; ++i)
-    {
-        index = result.rfind(c);
-
-        if (index == std::string::npos)
-            return "";
-
-        result = result.substr(index + 1);
-    }
-
-    return result;
-}
-
 inline bool FileExists(const std::string& path)
 {
     struct stat buffer;

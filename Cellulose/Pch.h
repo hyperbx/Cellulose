@@ -8,6 +8,7 @@
 #include <commdlg.h>
 #include <cstdint>
 #include <cstdio>
+#include <filesystem>
 #include <format>
 #include <ShlObj.h>
 #include <stdlib.h>

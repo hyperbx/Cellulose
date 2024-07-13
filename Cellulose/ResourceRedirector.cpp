@@ -10,18 +10,20 @@ std::string GetModuleName(HINSTANCE in_hInstance)
 
 HINSTANCE GetRedirectedModule(HINSTANCE in_hOrigInstance)
 {
-    auto name     = GetSubstringAfterLastChar(GetModuleName(in_hOrigInstance), '\\');
-    auto rsrcName = GetSubstringBeforeLastChar(name, '.') + ".res.dll";
-    auto rsrcPath = std::format("res\\{}\\{}", Configuration::Language, rsrcName);
+    auto work         = std::filesystem::current_path();
+    auto modulePath   = std::filesystem::path(GetModuleName(in_hOrigInstance));
+    auto relativePath = std::filesystem::relative(modulePath, work);
+    auto resourceName = GetSubstringBeforeLastChar(relativePath.string(), '.') + ".res.dll";
+    auto resourcePath = (work / "res" / Configuration::Language / resourceName).string();
 
-    if (!FileExists(rsrcPath))
+    if (!FileExists(resourcePath))
         return in_hOrigInstance;
 
 #if _DEBUG
-    printf("Redirecting resource to %s...\n", rsrcName.c_str());
+    printf("Redirecting resource to %s...\n", resourceName.c_str());
 #endif
 
-    return LoadLibraryA(rsrcPath.c_str());
+    return LoadLibraryA(resourcePath.c_str());
 }
 
 HOOK(HRSRC, __stdcall, _FindResourceA, PROC_ADDRESS("KERNEL32", "FindResourceA"), HMODULE in_hModule, LPCSTR in_lpName, LPCSTR in_lpType)
