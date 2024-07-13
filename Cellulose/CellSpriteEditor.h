@@ -1,12 +1,5 @@
 #pragma once
 
-#include <commdlg.h>
-#include <wrl/client.h>
-#include <ShlObj.h>
-#include <vector>
-#include <string>
-#include "DialogHelpers.h"
-
 #include "Locales\AnimationBankLocale.h"
 #include "Locales\BackstageLocale.h"
 #include "Locales\CastPropertiesLocale.h"
