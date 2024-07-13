@@ -36,7 +36,6 @@
     <ClInclude Include="Dependencies\INIReader.h" />
     <ClInclude Include="Configuration.h" />
     <ClInclude Include="ResourceRedirector.h" />
-    <ClInclude Include="resource.h" />
     <ClInclude Include="DialogHelpers.h" />
   </ItemGroup>
   <ItemGroup>

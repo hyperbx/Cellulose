@@ -132,7 +132,6 @@ powershell -ExecutionPolicy Bypass -Command "cd \"$(ProjectDir)Resources\" ; .\l
     <ClInclude Include="Locales\PlaybackControlsLocale.h" />
     <ClInclude Include="Locales\TimelineLocale.h" />
     <ClInclude Include="PlaneText.h" />
-    <ClInclude Include="resource.h" />
     <ClInclude Include="ResourceRedirector.h" />
     <ClInclude Include="StageAccess.h" />
   </ItemGroup>

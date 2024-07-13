@@ -224,7 +224,6 @@ public:
 		WRITE_MEMORY(0x439430, uint8_t, 0x31, 0xC0, 0xC3);
 
 		WRITE_NOP(0x41F3DF, 7);
-
 		WRITE_CALL(0x41F3DA, SetRecalculateCropSize);
 
 		INSTALL_HOOK(MyGetOpenFileNameA);
