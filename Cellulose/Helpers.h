@@ -1,4 +1,6 @@
 ﻿#pragma once
+#include <string>
+#define CP_SHIFT_JIS 932
 
 #define INI_BEGIN_SECTION(section) \
 { \
@@ -90,3 +92,19 @@
 		MessageBoxA(nullptr, "Failed to get module " ##in_module, "Fatal Error", MB_ICONERROR); \
 		exit(-1); \
 	}
+
+inline std::wstring MakeWideString(const char* pStr, uint32_t cp = CP_SHIFT_JIS)
+{
+    if (!pStr)
+    {
+        return {};
+    }
+    const auto len = strlen(pStr);
+    const auto bufLen = MultiByteToWideChar(cp, 0, pStr, len, nullptr, 0);
+
+	std::wstring buffer{};
+    buffer.resize(bufLen);
+
+    MultiByteToWideChar(cp, 0, pStr, len, buffer.data(), bufLen);
+    return buffer;
+}

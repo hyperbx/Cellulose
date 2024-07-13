@@ -10,6 +10,7 @@
 
 static void Init()
 {
+	CellSpriteEditor::Init();
 	CellSpriteEditor::InstallLocales();
 	CseDialog::InstallLocales();
 	CseFile::InstallLocales();
