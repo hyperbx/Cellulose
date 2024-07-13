@@ -317,11 +317,34 @@ public:
 		FileDialogHandler::wnd_handlers.find(hwnd)->second->customize->SetControlState(id, state ? CDCS_ENABLEDVISIBLE : CDCS_VISIBLE);
 	}
 
+	INLINE_HOOK(int, __fastcall, CWinApp_InitApplicationHook, PROC_ADDRESS("MFC42", (LPCSTR)3922), void* app)
+	{
+		auto result = originalCWinApp_InitApplicationHook(app);
+
+		TCHAR dir[MAX_PATH];
+		ULONG_PTR ulpActivationCookie = FALSE;
+		ACTCTX actCtx =
+		{
+			sizeof(actCtx),
+			ACTCTX_FLAG_RESOURCE_NAME_VALID
+				| ACTCTX_FLAG_SET_PROCESS_DEFAULT
+				| ACTCTX_FLAG_ASSEMBLY_DIRECTORY_VALID,
+			TEXT("shell32.dll"), 0, 0, dir, (LPCTSTR)124
+		};
+
+		UINT cch = GetSystemDirectory(dir, sizeof(dir) / sizeof(*dir));
+		dir[cch] = TEXT('\0');
+		ActivateActCtx(CreateActCtx(&actCtx), &ulpActivationCookie);
+
+		return result;
+	}
+
 	static void Init()
 	{
 #if _DEBUG
 		INIT_CONSOLE();
 #endif
+
 		// Disable license authentication.
 		WRITE_MEMORY(0x439430, uint8_t, 0x31, 0xC0, 0xC3);
 
@@ -333,5 +356,7 @@ public:
 		INSTALL_HOOK(MySHBrowseForFolderA);
 		INSTALL_HOOK(MyCheckDlgButton);
 		INSTALL_HOOK(MyIsDlgButtonChecked);
+
+		INSTALL_HOOK(CWinApp_InitApplicationHook);
 	}
 };
