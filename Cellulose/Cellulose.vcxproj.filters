@@ -27,7 +27,13 @@
     <ClInclude Include="CseFile.h" />
     <ClInclude Include="Locales\CastInstanceEditorLocale.h" />
     <ClInclude Include="Locales\GridOptionsLocale.h" />
-    <ClInclude Include="Locales\AnimationBankEditorLocale.h" />
+    <ClInclude Include="CropPropertyEdit.h" />
+    <ClInclude Include="FileRender.h" />
+    <ClInclude Include="Locales\AnimationBankLocale.h" />
+    <ClInclude Include="Locales\ToolTipLocale.h" />
+    <ClInclude Include="PlaneText.h" />
+    <ClInclude Include="StageAccess.h" />
+    <ClInclude Include="Dependencies\INIReader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DllMain.cpp" />

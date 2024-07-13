@@ -13,9 +13,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{ed3a1118-a49a-44dc-ba34-ea222f5afaf3}</ProjectGuid>
-    <RootNamespace>RflTemplateDumper</RootNamespace>
+    <RootNamespace>Cellulose</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
-    <ProjectName>CellSpriteEditor_en-GB</ProjectName>
+    <ProjectName>Cellulose</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

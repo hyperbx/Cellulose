@@ -1,5 +1,26 @@
 ﻿#pragma once
 
+#define INI_BEGIN_SECTION(section) \
+{ \
+    std::string CurrentSection = section;
+
+#define INI_READ_STRING_B(var)     var = reader.Get(CurrentSection, #var, var)
+#define INI_READ_BOOLEAN_B(var)    var = reader.GetBoolean(CurrentSection, #var, var)
+#define INI_READ_FLOAT_B(var)      var = reader.GetFloat(CurrentSection, #var, var)
+#define INI_READ_INTEGER_B(var)    var = reader.GetInteger(CurrentSection, #var, var)
+#define INI_READ_DOUBLE_B(var)     var = reader.GetReal(CurrentSection, #var, var)
+#define INI_READ_ENUM_B(type, var) var = (type)reader.GetInteger(CurrentSection, #var, var)
+
+#define INI_END_SECTION() \
+}
+
+#define INI_READ_STRING(section, var)     var = reader.Get(section, #var, var)
+#define INI_READ_BOOLEAN(section, var)    var = reader.GetBoolean(section, #var, var)
+#define INI_READ_FLOAT(section, var)      var = reader.GetFloat(section, #var, var)
+#define INI_READ_INTEGER(section, var)    var = reader.GetInteger(section, #var, var)
+#define INI_READ_DOUBLE(section, var)     var = reader.GetReal(section, #var, var)
+#define INI_READ_ENUM(section, type, var) var = (type)reader.GetInteger(section, #var, var)
+
 #define FUNCTION_PTR(returnType, callingConvention, function, location, ...) \
     returnType (callingConvention *function)(__VA_ARGS__) = (returnType(callingConvention*)(__VA_ARGS__))(location)
 
