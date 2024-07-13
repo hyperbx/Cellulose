@@ -24,6 +24,6 @@ public:
 		WRITE_MEMORY(pModuleBase + 0x1370, const char*, m_strCommonCaption);
 
 		// Messages.
-		WRITE_MEMORY(pModuleBase + 0x1375, const char*, "An error occurred during saving.");
+		WRITE_MEMORY(pModuleBase + 0x1375, const char*, "An error occurred whilst saving.");
 	}
 };

@@ -11,6 +11,19 @@ public:
 		WRITE_MEMORY(0x46270C, const char, "Change Animation Bank (&S)");
 	}
 
+	static void InstallCseCore(size_t in_base)
+	{
+		// Captions.
+		WRITE_MEMORY(in_base + 0x14C7, const char*, "Copy Animation");
+
+		// Messages.
+		WRITE_MEMORY(in_base + 0x14AA, const char*, "Failed to copy animation ID: %d");
+
+		// Miscellaneous.
+		WRITE_MEMORY(in_base + 0x101D8, const char*, "Copy of ");
+		WRITE_MEMORY(in_base + 0x12BF0, const char*, "Generated Animation Bank");
+	}
+
 	static void InstallCseDialog(size_t in_base)
 	{
 		// Captions.

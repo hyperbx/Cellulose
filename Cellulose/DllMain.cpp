@@ -2,8 +2,14 @@
 
 #include "CellSpriteEditor.h"
 #include "CropPropertyEdit.h"
+#include "CseConfig.h"
+#include "CseCore.h"
 #include "CseDialog.h"
+#include "CseDuplicate.h"
 #include "CseFile.h"
+#include "CseOption.h"
+#include "CseQuickSave.h"
+#include "CseUndo.h"
 #include "FileRender.h"
 #include "PlaneText.h"
 #include "StageAccess.h"
@@ -13,8 +19,14 @@ static void Init()
 	CellSpriteEditor::Init();
 
 	CellSpriteEditor::InstallLocales();
+	CseConfig::InstallLocales();
+	CseCore::InstallLocales();
 	CseDialog::InstallLocales();
+	CseDuplicate::InstallLocales();
 	CseFile::InstallLocales();
+	CseOption::InstallLocales();
+	CseQuickSave::InstallLocales();
+	CseUndo::InstallLocales();
 
 	ResourceRedirector::Install();
 }

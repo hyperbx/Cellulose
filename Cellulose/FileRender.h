@@ -23,7 +23,7 @@ public:
 
 		// Messages.
 		WRITE_MEMORY(pModuleBase + 0x191B, const char*, "Failed to create output directory.");
-		WRITE_MEMORY(pModuleBase + 0x1D87, const char*, "An error occurred during saving.");
+		WRITE_MEMORY(pModuleBase + 0x1D87, const char*, "An error occurred whilst saving.");
 		WRITE_MEMORY(pModuleBase + 0x1DA6, const char*, "Failed to capture stage surface.");
 
 		// Miscellaneous.
