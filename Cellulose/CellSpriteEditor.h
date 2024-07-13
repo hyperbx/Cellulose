@@ -56,18 +56,12 @@ public:
 		WRITE_MEMORY(0x460BF8, const char*, "The program 'CellSpriteEditor.exe' has exited with code 0 (0x0).")
 	}
 
-	INLINE_HOOK(BOOL, WINAPI, MyGetOpenFileNameA, PROC_ADDRESS("COMDLG32", "GetOpenFileNameA"), OPENFILENAMEA* arg)
+	inline static void SetupCommonDialog(IFileDialog* dlg, OPENFILENAMEA* arg)
 	{
-		ComPtr<IFileOpenDialog> ofn{};
-
-		if (!SUCCEEDED(CoCreateInstance(CLSID_FileOpenDialog, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&ofn))))
-			return FALSE;
-		
-		ComPtr<IExplorerBrowserEvents> explorerEvents{};
-		ofn->QueryInterface(IID_PPV_ARGS(&explorerEvents));
-
 		const auto title = MakeWideString(arg->lpstrTitle);
 		const auto fileName = MakeWideString(arg->lpstrFile);
+		const auto defaultExt = MakeWideString(arg->lpstrDefExt);
+
 		std::vector<COMDLG_FILTERSPEC> filters{};
 		std::vector<std::wstring> strings{};
 
@@ -96,15 +90,16 @@ public:
 			SHCreateItemFromParsingName(initialDir.c_str(), nullptr, IID_PPV_ARGS(&folder));
 
 			if (folder)
-				ofn->SetFolder(folder.Get());
+				dlg->SetFolder(folder.Get());
 		}
 
-		ofn->SetFileName(fileName.c_str());
-		ofn->SetFileTypes(filters.size(), filters.data());
-		ofn->SetTitle(title.c_str());
+		dlg->SetFileName(fileName.c_str());
+		dlg->SetDefaultExtension(defaultExt.c_str());
+		dlg->SetFileTypes(filters.size(), filters.data());
+		dlg->SetTitle(title.c_str());
 
 		ComPtr<IFileDialogCustomize> customize;
-		ofn->QueryInterface(IID_PPV_ARGS(&customize));
+		dlg->QueryInterface(IID_PPV_ARGS(&customize));
 
 		if (arg->Flags & OFN_ENABLETEMPLATE)
 		{
@@ -155,7 +150,17 @@ public:
 		handler->params = arg;
 
 		DWORD handlerCookie;
-		ofn->Advise(handler, &handlerCookie);
+		dlg->Advise(handler, &handlerCookie);
+	}
+
+	INLINE_HOOK(BOOL, WINAPI, MyGetOpenFileNameA, PROC_ADDRESS("COMDLG32", "GetOpenFileNameA"), OPENFILENAMEA* arg)
+	{
+		ComPtr<IFileOpenDialog> ofn{};
+
+		if (!SUCCEEDED(CoCreateInstance(CLSID_FileOpenDialog, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&ofn))))
+			return FALSE;
+		
+		SetupCommonDialog(ofn.Get(), arg);
 
 		if (!SUCCEEDED(ofn->Show(arg->hwndOwner)))
 			return FALSE;
@@ -164,13 +169,76 @@ public:
 		ofn->GetResult(&result);
 
 		wchar_t* path{};
+		wchar_t* fileTitle{};
 		result->GetDisplayName(SIGDN_FILESYSPATH, &path);
+		result->GetDisplayName(SIGDN_NORMALDISPLAY, &fileTitle);
 
 		if (!path)
 			return FALSE;
 
 		WideCharToMultiByte(CP_ACP, 0, path, wcslen(path), arg->lpstrFile, arg->nMaxFile, nullptr, nullptr);
+		WideCharToMultiByte(CP_ACP, 0, fileTitle, wcslen(fileTitle), arg->lpstrFileTitle, arg->nMaxFileTitle, nullptr, nullptr);
+		const auto* fileName = PathFindFileNameA(arg->lpstrFile);
+		const auto* extension = PathFindExtensionA(arg->lpstrFile);
+
+		if (fileName != nullptr)
+		{
+			arg->nFileOffset = fileName - arg->lpstrFile;
+		}
+
+		if (extension != nullptr)
+		{
+			arg->nFileExtension = extension - arg->lpstrFile;
+		}
+
 		CoTaskMemFree(path);
+		CoTaskMemFree(fileTitle);
+
+		return TRUE;
+	}
+
+	INLINE_HOOK(BOOL, WINAPI, MyGetSaveFileNameA, PROC_ADDRESS("COMDLG32", "GetSaveFileNameA"), OPENFILENAMEA* arg)
+	{
+		ComPtr<IFileSaveDialog> sfn{};
+
+		if (!SUCCEEDED(CoCreateInstance(CLSID_FileSaveDialog, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&sfn))))
+			return FALSE;
+
+		SetupCommonDialog(sfn.Get(), arg);
+
+		if (!SUCCEEDED(sfn->Show(arg->hwndOwner)))
+			return FALSE;
+
+		ComPtr<IShellItem> result{};
+		sfn->GetResult(&result);
+
+		wchar_t* path{};
+		wchar_t* fileTitle{};
+		result->GetDisplayName(SIGDN_FILESYSPATH, &path);
+		result->GetDisplayName(SIGDN_NORMALDISPLAY, &fileTitle);
+
+		if (!path)
+			return FALSE;
+
+		sfn->GetFileTypeIndex((UINT*)&arg->nFilterIndex);
+		WideCharToMultiByte(CP_ACP, 0, path, wcslen(path), arg->lpstrFile, arg->nMaxFile, nullptr, nullptr);
+		WideCharToMultiByte(CP_ACP, 0, fileTitle, wcslen(fileTitle), arg->lpstrFileTitle, arg->nMaxFileTitle, nullptr, nullptr);
+
+		const auto* fileName = PathFindFileNameA(arg->lpstrFile);
+		const auto* extension = PathFindExtensionA(arg->lpstrFile);
+		
+		if (fileName != nullptr)
+		{
+			arg->nFileOffset = fileName - arg->lpstrFile;
+		}
+
+		if (extension != nullptr)
+		{
+			arg->nFileExtension = extension - arg->lpstrFile;
+		}
+
+		CoTaskMemFree(path);
+		CoTaskMemFree(fileTitle);
 
 		return TRUE;
 	}
@@ -261,6 +329,7 @@ public:
 		WRITE_CALL(0x41F3DA, SetRecalculateCropSize);
 
 		INSTALL_HOOK(MyGetOpenFileNameA);
+		INSTALL_HOOK(MyGetSaveFileNameA);
 		INSTALL_HOOK(MySHBrowseForFolderA);
 		INSTALL_HOOK(MyCheckDlgButton);
 		INSTALL_HOOK(MyIsDlgButtonChecked);

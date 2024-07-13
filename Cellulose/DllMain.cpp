@@ -1,4 +1,5 @@
 #pragma comment(linker, "/EXPORT:Direct3DCreate8=C:\\Windows\\System32\\d3d8.Direct3DCreate8")
+#pragma comment(lib, "Shlwapi.lib")
 
 #include "CellSpriteEditor.h"
 #include "CropPropertyEdit.h"

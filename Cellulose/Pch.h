@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <string>
 #include <vector>
+#include <Shlwapi.h>
 #include <wrl/client.h>
 
 #include "Dependencies\INIReader.h"
