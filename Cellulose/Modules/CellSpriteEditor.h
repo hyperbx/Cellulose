@@ -418,7 +418,7 @@ public:
 		LocaleService::Localise(0x40DB34, "CellSpriteEditor_Message_Timeline_CopyKey");
 		LocaleService::Localise(0x42EC3C, "CellSpriteEditor_Node_Timeline_SelectedCasts");
 		LocaleService::Localise(0x42EBDD, "CellSpriteEditor_Node_Timeline_SelectedCastsLocked");
-		LocaleService::Localise(0x42ED9C, "Transform (TRS)");
+		LocaleService::Localise(0x42ED9C, "Common_Misc_TRS");
 		LocaleService::Localise(0x42EDDE, "Common_Misc_TX");
 		LocaleService::Localise(0x42EE20, "Common_Misc_TY");
 		LocaleService::Localise(0x42EE62, "Common_Misc_RZ");
