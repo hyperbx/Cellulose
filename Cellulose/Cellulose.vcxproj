@@ -131,6 +131,7 @@ powershell -ExecutionPolicy Bypass -Command "cd \"$(ProjectDir)Resources\" ; .\l
     <ClInclude Include="Pch.h" />
     <ClInclude Include="Locales\PlaybackControlsLocale.h" />
     <ClInclude Include="Modules\PlaneText.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="ResourceRedirector.h" />
     <ClInclude Include="Modules\StageAccess.h" />
   </ItemGroup>
@@ -152,6 +153,9 @@ powershell -ExecutionPolicy Bypass -Command "cd \"$(ProjectDir)Resources\" ; .\l
   <ItemGroup>
     <None Include="Dependencies\Detours\lib\x64\detours.pdb" />
     <None Include="Dependencies\Detours\lib\x86\detours.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Cellulose.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

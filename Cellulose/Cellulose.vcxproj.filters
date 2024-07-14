@@ -33,6 +33,7 @@
     <ClInclude Include="Modules\CseFile.h" />
     <ClInclude Include="Modules\PlaneText.h" />
     <ClInclude Include="Modules\StageAccess.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DllMain.cpp" />
@@ -81,5 +82,8 @@
     <None Include="Dependencies\Detours\lib\x86\detours.pdb">
       <Filter>Dependencies\Detours\lib\x86</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Cellulose.rc" />
   </ItemGroup>
 </Project>
