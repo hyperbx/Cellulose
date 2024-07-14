@@ -19,6 +19,9 @@ popd
 
 $dummyObj  = "..\obj\Win32\${Configuration}\rsrc.obj"
 
+# Copy internal string definitions to output resource path.
+Copy-Item -Path ".\${Language}\Internal.json" -Destination "..\bin\Win32\${Configuration}\res\${Language}\Internal.json" -Force
+
 # Create dummy object for resource DLLs.
 Invoke-Expression "cl /c rsrc.c /Fo""${dummyObj}"""
 

@@ -18,7 +18,9 @@
 #include <wrl/client.h>
 
 #include "Dependencies\INIReader.h"
+#include "Dependencies\json.h"
 #include "Helpers.h"
 #include "Configuration.h"
+#include "LocaleService.h"
 #include "DialogHelpers.h"
 #include "ResourceRedirector.h"

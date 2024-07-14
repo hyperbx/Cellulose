@@ -11,7 +11,6 @@ public:
 
 		CHECK_MODULE(pModuleBase, "CropPropertyEdit.dll");
 
-		// Plugin name.
-		WRITE_MEMORY(pModuleBase + 0x4030, const char*, "C&rop Properties... (&R)");
+		LocaleService::Localise(pModuleBase + 0x4030, "CropPropertyEdit_PluginName");
 	}
 };

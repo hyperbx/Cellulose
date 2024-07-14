@@ -1,5 +1,9 @@
 ﻿#pragma once
+
+#include <fstream>
+#include <sstream>
 #include <string>
+
 #define CP_SHIFT_JIS 932
 
 #define INI_BEGIN_SECTION(section) \
@@ -97,6 +101,13 @@
     AllocConsole(); \
     freopen("CONOUT$", "w", stdout);
 
+inline bool FileExists(const std::string& path)
+{
+    struct stat buffer;
+
+    return stat(path.c_str(), &buffer) == 0;
+}
+
 inline std::wstring MakeWideString(const char* pStr, uint32_t cp = CP_SHIFT_JIS)
 {
     if (!pStr)
@@ -113,6 +124,19 @@ inline std::wstring MakeWideString(const char* pStr, uint32_t cp = CP_SHIFT_JIS)
     return buffer;
 }
 
+inline size_t GetModuleBase(const char* in_pName)
+{
+    auto base = (size_t)GetModuleHandle(in_pName);
+
+    if (base == 0)
+    {
+        MessageBoxA(nullptr, std::format("Failed to get module: {}.dll", in_pName).c_str(), "Cellulose", MB_ICONERROR);
+        exit(-1);
+    }
+
+    return base;
+}
+
 inline std::string GetSubstringBeforeLastChar(const std::string str, char c, int cIndex = 0)
 {
     std::string result;
@@ -127,9 +151,23 @@ inline std::string GetSubstringBeforeLastChar(const std::string str, char c, int
     return result;
 }
 
-inline bool FileExists(const std::string& path)
+inline std::string ReadStringFromFile(const std::filesystem::path& path)
 {
-    struct stat buffer;
+    std::ifstream txt(path);
 
-    return stat(path.c_str(), &buffer) == 0;
+    std::stringstream buffer;
+    {
+        buffer << txt.rdbuf();
+    }
+
+    return buffer.str();
+}
+
+inline const char* StringToConstCharPtr(const std::string in_str)
+{
+    char* buffer = new char[in_str.size() + 1];
+
+    strcpy(buffer, in_str.c_str());
+
+    return buffer;
 }

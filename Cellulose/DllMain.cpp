@@ -1,19 +1,18 @@
 #pragma comment(linker, "/EXPORT:Direct3DCreate8=C:\\Windows\\System32\\d3d8.Direct3DCreate8")
-#pragma comment(lib, "Shlwapi.lib")
 
-#include "CellSpriteEditor.h"
-#include "CropPropertyEdit.h"
-#include "CseConfig.h"
-#include "CseCore.h"
-#include "CseDialog.h"
-#include "CseDuplicate.h"
-#include "CseFile.h"
-#include "CseOption.h"
-#include "CseQuickSave.h"
-#include "CseUndo.h"
-#include "FileRender.h"
-#include "PlaneText.h"
-#include "StageAccess.h"
+#include "Modules\CellSpriteEditor.h"
+#include "Modules\CropPropertyEdit.h"
+#include "Modules\CseConfig.h"
+#include "Modules\CseCore.h"
+#include "Modules\CseDialog.h"
+#include "Modules\CseDuplicate.h"
+#include "Modules\CseFile.h"
+#include "Modules\CseOption.h"
+#include "Modules\CseQuickSave.h"
+#include "Modules\CseUndo.h"
+#include "Modules\FileRender.h"
+#include "Modules\PlaneText.h"
+#include "Modules\StageAccess.h"
 
 static void Init()
 {
@@ -62,6 +61,7 @@ BOOL WINAPI DllMain(HINSTANCE in_hInstance, DWORD in_fdwReason, LPVOID in_lpvRes
 		case DLL_PROCESS_ATTACH:
 		{
 			Configuration::Read();
+			LocaleService::Read(std::format("res\\{}\\Internal.json", Configuration::Language));
 
 			Init();
 

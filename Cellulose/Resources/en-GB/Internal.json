@@ -1,0 +1,321 @@
+{
+    "CellSpriteEditor ---------------------------------------------------": "--------------------------------------------------------------------",
+
+    "CellSpriteEditor_Caption_CastProperties_Caption":                      "Cast Properties",
+    "CellSpriteEditor_Caption_CastProperties_PropertiesForCast":            "Properties for %s",
+    "CellSpriteEditor_Caption_CastProperties_PropertiesForCasts":           "Properties for multiple casts",
+    "CellSpriteEditor_Caption_CropList_Caption":                            "Crop List",
+    "CellSpriteEditor_Caption_CropList_CropsForCast":                       "Crops for %s",
+    "CellSpriteEditor_Caption_ExportStageToTexture":                        "Export Stage to Texture...",
+    "CellSpriteEditor_Caption_FontList_CreateFont":                         "Create Font",
+    "CellSpriteEditor_Caption_FontList_DeleteFont":                         "Delete Font",
+    "CellSpriteEditor_Caption_FontList_EditText":                           "Edit Text",
+    "CellSpriteEditor_Caption_FontList_RenameFont":                         "Rename Font",
+    "CellSpriteEditor_Caption_TextureListReference":                        "Texture List: Reference (%s%s.ctf)",
+    "CellSpriteEditor_Caption_TextureListExternal":                         "Texture List: External (%s%s.ctf)",
+    "CellSpriteEditor_Caption_TextureListInternal":                         "Texture List: Internal",
+    "CellSpriteEditor_Caption_Backstage_CopyCastParameters":                "Copy Cast Parameters",
+    "CellSpriteEditor_Caption_Backstage_CreateInstance":                    "Create Instance",
+    "CellSpriteEditor_Caption_Backstage_DuplicateFolder":                   "Duplicate Folder",
+    "CellSpriteEditor_Caption_Backstage_Offset":                            "Offset",
+    "CellSpriteEditor_Caption_Backstage_PasteCastParameters":               "Paste Cast Parameters",
+    "CellSpriteEditor_Caption_Backstage_PriorityDisplay":                   "Backstage - Priority Display",
+    "CellSpriteEditor_Caption_Backstage_RenameFolder":                      "Rename Folder",
+    "CellSpriteEditor_Caption_Backstage_RenameScene":                       "Rename Scene",
+    "CellSpriteEditor_Caption_NewProject_ChooseTextureListFile":            "Choose a texture list file...",
+    "CellSpriteEditor_Caption_Timeline_CopyKey":                            "Copy Key",
+    "CellSpriteEditor_Caption_Timeline_MoveToFrame":                        "Move to Specific Frame...",
+    "CellSpriteEditor_Caption_Timeline_FunctionCurve":                      "Timeline - Function Curve",
+    "CellSpriteEditor_Caption_Timeline_DopeSheet":                          "Timeline - Dope Sheet",
+    "CellSpriteEditor_Caption_Timeline_PasteKey":                           "Paste Key",
+    
+    "CellSpriteEditor_Column_FontList_Char":                                "Char",
+    "CellSpriteEditor_Column_FontList_Code":                                "Code",
+    "CellSpriteEditor_Column_FontList_FontName":                            "Font name",
+    "CellSpriteEditor_Column_PictureList_FileName":                         "File name",
+    "CellSpriteEditor_Column_PictureList_Format":                           "Format",
+    "CellSpriteEditor_Column_PictureList_Width":                            "Width",
+    "CellSpriteEditor_Column_PictureList_Height":                           "Height",
+    "CellSpriteEditor_Column_PictureList_Image":                            "Image",
+
+    "CellSpriteEditor_Menu_AnimationBank_BankEntry":                        "%d : %s",
+    "CellSpriteEditor_Menu_AnimationBank_ChangeBank":                       "Change Animation Bank (&S)",
+    "CellSpriteEditor_Menu_AnimationBank_None":                             "None",
+    "CellSpriteEditor_Menu_Export":                                         "&Export",
+
+    "CellSpriteEditor_Message_Backstage_CastInstantiateError":              "Unable to create an instance of cast: %s",
+    "CellSpriteEditor_Message_Backstage_NoCastSelected":                    "No cast selected.",
+    "CellSpriteEditor_Message_Backstage_NoCastsToPaste":                    "There are no casts to paste.",
+    "CellSpriteEditor_Message_Backstage_RootFolderDuplicateError":          "Unable to duplicate the root folder.",
+    "CellSpriteEditor_Message_Backstage_SelectCast":                        "Please select a cast.",
+    "CellSpriteEditor_Message_Backstage_SelectCastInstantiate":             "Please select a cast to instantiate.",
+    "CellSpriteEditor_Message_Backstage_SceneRenameError":                  "Unable to change scene to the specified name.",
+    "CellSpriteEditor_Message_Backstage_TwoOrMoreCastsSelected":            "Two or more casts are selected.",
+    "CellSpriteEditor_Message_CropList_CropNotFound":                       "That crop is not in the project.",
+    "CellSpriteEditor_Message_FontList_DeleteFont":                         "Are you sure you want to delete \"%s\"? There are text casts currently using this font.",
+    "CellSpriteEditor_Message_FontList_UnsupportedChar":                    "The specified character is not supported.",
+    "CellSpriteEditor_Message_NewProject_ChooseTextureListDir":             "Choose a texture list directory...",
+    "CellSpriteEditor_Message_NewProject_ChooseProjectDir":                 "Choose a project directory...",
+    "CellSpriteEditor_Message_NewProject_OverwriteFile":                    "There is already a %s file at this location.\nDo you want to overwrite it?",
+    "CellSpriteEditor_Message_Timeline_CopyKey":                            "Copying keys to tracks of different cast properties may have unexpected results. Are you sure you want to continue?",
+    "CellSpriteEditor_Message_Timeline_SelectKey":                          "Please select a key.",
+    "CellSpriteEditor_Message_Timeline_EmptyClipboard":                     "There is no data on the clipboard.",
+    "CellSpriteEditor_Message_Timeline_PlaceMarker":                        "Please place a marker.",
+
+    "CellSpriteEditor_Misc_Backstage_NoSceneInfo":                          " [None]",
+    "CellSpriteEditor_Misc_Backstage_SceneInfo":                            " [%s] [%d/%d] [End: %d]",
+    "CellSpriteEditor_Misc_NewProject_CreateTextureListInDir":              "A texture list file will be created in the specified directory.\r\nIf you save the project under a different name, the texture list will always\r\nbe written to the specified location.",
+    "CellSpriteEditor_Misc_NewProject_IncludeTextureListInProject":         "A texture list file will be created in the same directory as the project.\r\nThe project file and the texture list file are always managed in synergy.\r\nIf you save the project under a different name, the texture list will follow.",
+    "CellSpriteEditor_Misc_NewProject_ProjectType":                         "project",
+    "CellSpriteEditor_Misc_NewProject_TextureListType":                     "texture list",
+    "CellSpriteEditor_Misc_NewProject_UseExistingTextureList":              "Load and use an existing texture list file.\r\nThe original texture list file will be updated after saving changes.\r\nIf you save the project under a different name, the texture list will always\r\nbe written to the specified location.",
+    "CellSpriteEditor_Misc_Picture_NoPictures":                             "There are no pictures to display.",
+    "CellSpriteEditor_Misc_ProgramExited":                                  "The program 'CellSpriteEditor.exe' has exited with code 0 (0x0).",
+    "CellSpriteEditor_Misc_Timeline_Frame":                                 "Frame",
+
+    "CellSpriteEditor_Node_Timeline_SelectedCasts":                         "Selected Casts",
+    "CellSpriteEditor_Node_Timeline_SelectedCastsLocked":                   "Selected Casts (Locked)",
+    "CellSpriteEditor_Node_Timeline_VertexColour":                          "Vertex Colour (VC)",
+
+    "CellSpriteEditor_ToolTip_CastProperties_Basic_CastSize":               "The width and height of this cast in pixels.",
+    "CellSpriteEditor_ToolTip_CastProperties_Basic_CastSize_Fit":           "Fit the width and height to the current pattern size.",
+    "CellSpriteEditor_ToolTip_CastProperties_Basic_ID":                     "The unique identifier of this cast.",
+    "CellSpriteEditor_ToolTip_CastProperties_Basic_Name":                   "The name of this cast.",
+    "CellSpriteEditor_ToolTip_CastProperties_Basic_PivotPosition_Custom":   "Specify a custom pivot point.",
+    "CellSpriteEditor_ToolTip_CastProperties_Basic_PivotPosition_CustomX":  "The X co-ordinate of the custom pivot point.",
+    "CellSpriteEditor_ToolTip_CastProperties_Basic_PivotPosition_CustomY":  "The Y co-ordinate of the custom pivot point.",
+    "CellSpriteEditor_ToolTip_CastProperties_Basic_PivotPosition_C":        "Set the pivot point to the centre of this cast.",
+    "CellSpriteEditor_ToolTip_CastProperties_Basic_PivotPosition_CL":       "Set the pivot point to the centre-left of this cast.",
+    "CellSpriteEditor_ToolTip_CastProperties_Basic_PivotPosition_CR":       "Set the pivot point to the centre-right of this cast.",
+    "CellSpriteEditor_ToolTip_CastProperties_Basic_PivotPosition_BC":       "Set the pivot point to the bottom-centre of this cast.",
+    "CellSpriteEditor_ToolTip_CastProperties_Basic_PivotPosition_BL":       "Set the pivot point to the bottom-left of this cast.",
+    "CellSpriteEditor_ToolTip_CastProperties_Basic_PivotPosition_BR":       "Set the pivot point to the bottom-right of this cast.",
+    "CellSpriteEditor_ToolTip_CastProperties_Basic_PivotPosition_TC":       "Set the pivot point to the top-centre of this cast.",
+    "CellSpriteEditor_ToolTip_CastProperties_Basic_PivotPosition_TL":       "Set the pivot point to the top-left of this cast.",
+    "CellSpriteEditor_ToolTip_CastProperties_Basic_PivotPosition_TR":       "Set the pivot point to the top-right of this cast.",
+    "CellSpriteEditor_ToolTip_CastProperties_Basic_Status_Active":          "Toggle cast visibility in stage view.",
+    "CellSpriteEditor_ToolTip_CastProperties_Basic_Status_Lock":            "Toggle cast editing in stage view.",
+    "CellSpriteEditor_ToolTip_CastProperties_Colour_All":                   "Set target to all vertices.",
+    "CellSpriteEditor_ToolTip_CastProperties_Colour_Alpha":                 "Set alpha intensity.",
+    "CellSpriteEditor_ToolTip_CastProperties_Colour_Blue":                  "Set blue intensity.",
+    "CellSpriteEditor_ToolTip_CastProperties_Colour_Green":                 "Set green intensity.",
+    "CellSpriteEditor_ToolTip_CastProperties_Colour_Material":              "Set target to material colour.",
+    "CellSpriteEditor_ToolTip_CastProperties_Colour_OpenColourPicker":      "Double-click to open the colour picker.",
+    "CellSpriteEditor_ToolTip_CastProperties_Colour_Red":                   "Set red intensity.",
+    "CellSpriteEditor_ToolTip_CastProperties_Colour_VC_BL":                 "Set target to bottom-left vertex (hold CTRL to add).",
+    "CellSpriteEditor_ToolTip_CastProperties_Colour_VC_BR":                 "Set target to bottom-right vertex (hold CTRL to add).",
+    "CellSpriteEditor_ToolTip_CastProperties_Colour_VC_TL":                 "Set target to top-left vertex (hold CTRL to add).",
+    "CellSpriteEditor_ToolTip_CastProperties_Colour_VC_TR":                 "Set target to top-right vertex (hold CTRL to add).",
+    "CellSpriteEditor_ToolTip_CastProperties_Image_Alpha_Auto":             "Set the alpha mode to automatically determine the correct mode.",
+    "CellSpriteEditor_ToolTip_CastProperties_Image_Alpha_Opaque":           "Set the alpha mode to opaque.",
+    "CellSpriteEditor_ToolTip_CastProperties_Image_Alpha_Punchthrough":     "Set the alpha mode to punchthrough.",
+    "CellSpriteEditor_ToolTip_CastProperties_Image_Alpha_Translucent":      "Set the alpha mode to translucent.",
+    "CellSpriteEditor_ToolTip_CastProperties_Image_Blend":                  "Select the blend mode (NRM = Normal; ADD = Additive).",
+    "CellSpriteEditor_ToolTip_CastProperties_Image_InvertUV_H":             "Toggle horizontal flip.",
+    "CellSpriteEditor_ToolTip_CastProperties_Image_InvertUV_V":             "Toggle vertical flip.",
+    "CellSpriteEditor_ToolTip_CastProperties_Image_Texture_Filter":         "Select the texture filtering mode.",
+    "CellSpriteEditor_ToolTip_CastProperties_Image_Texture_WrappingH":      "Select the horizontal texture wrapping mode.",
+    "CellSpriteEditor_ToolTip_CastProperties_Image_Texture_WrappingV":      "Select the vertical texture wrapping mode.",
+    "CellSpriteEditor_ToolTip_CastProperties_Inheritance_Hide":             "Toggle hide inheritance.",
+    "CellSpriteEditor_ToolTip_CastProperties_Inheritance_Material":         "Toggle material inheritance.",
+    "CellSpriteEditor_ToolTip_CastProperties_Inheritance_Rotation":         "Toggle rotation inheritance.",
+    "CellSpriteEditor_ToolTip_CastProperties_Inheritance_Scale":            "Toggle scale inheritance.",
+    "CellSpriteEditor_ToolTip_CastProperties_Inheritance_Transform":        "Toggle transform inheritance.",
+    "CellSpriteEditor_ToolTip_CastProperties_Memo":                         "Write a memo about this cast (not implemented).",
+    "CellSpriteEditor_ToolTip_CastProperties_Motion_Hide":                  "Toggle cast visibility.",
+    "CellSpriteEditor_ToolTip_CastProperties_Motion_Pattern":               "Set the pattern ID.",
+    "CellSpriteEditor_ToolTip_CastProperties_Motion_Pattern_Interp":        "Select the interpolation mode for pattern change keyframes.",
+    "CellSpriteEditor_ToolTip_CastProperties_Motion_Rotation":              "Rotation",
+    "CellSpriteEditor_ToolTip_CastProperties_Motion_RZ_Interp":             "Select the interpolation mode for rotation keyframes.",
+    "CellSpriteEditor_ToolTip_CastProperties_Motion_ScaleX":                "Scale X",
+    "CellSpriteEditor_ToolTip_CastProperties_Motion_ScaleY":                "Scale Y",
+    "CellSpriteEditor_ToolTip_CastProperties_Motion_SX_Interp":             "Select the interpolation mode for scale X keyframes.",
+    "CellSpriteEditor_ToolTip_CastProperties_Motion_SY_Interp":             "Select the interpolation mode for scale Y keyframes.",
+    "CellSpriteEditor_ToolTip_CastProperties_Motion_TX_Interp":             "Select the interpolation mode for X transform keyframes.",
+    "CellSpriteEditor_ToolTip_CastProperties_Motion_TY_Interp":             "Select the interpolation mode for Y transform keyframes.",
+    "CellSpriteEditor_ToolTip_CastProperties_Motion_X":                     "X",
+    "CellSpriteEditor_ToolTip_CastProperties_Motion_Y":                     "Y",
+    "CellSpriteEditor_ToolTip_CastProperties_MotionLoop_Hide":              "Toggle hide animation looping.",
+    "CellSpriteEditor_ToolTip_CastProperties_MotionLoop_Material":          "Toggle material animation looping.",
+    "CellSpriteEditor_ToolTip_CastProperties_MotionLoop_Pattern":           "Toggle pattern change animation looping.",
+    "CellSpriteEditor_ToolTip_CastProperties_MotionLoop_RZ":                "Toggle rotation animation looping.",
+    "CellSpriteEditor_ToolTip_CastProperties_MotionLoop_SX":                "Toggle scale X animation looping.",
+    "CellSpriteEditor_ToolTip_CastProperties_MotionLoop_SY":                "Toggle scale Y animation looping.",
+    "CellSpriteEditor_ToolTip_CastProperties_MotionLoop_TX":                "Toggle X transform animation looping.",
+    "CellSpriteEditor_ToolTip_CastProperties_MotionLoop_TY":                "Toggle Y transform animation looping.",
+    "CellSpriteEditor_ToolTip_CastProperties_MotionLoop_User":              "Toggle user data animation looping.",
+    "CellSpriteEditor_ToolTip_CastProperties_MotionLoop_VC":                "Toggle vertex colour animation looping.",
+    "CellSpriteEditor_ToolTip_CastProperties_Text_Font":                    "Select a font.",
+    "CellSpriteEditor_ToolTip_CastProperties_Text_String":                  "Set the font test string.",
+    "CellSpriteEditor_ToolTip_CastProperties_UserData_1":                   "Set the value of user data in slot 1.",
+    "CellSpriteEditor_ToolTip_CastProperties_UserData_2":                   "Set the value of user data in slot 2.",
+    "CellSpriteEditor_ToolTip_CastProperties_UserData_3":                   "Set the value of user data in slot 3.",
+    "CellSpriteEditor_ToolTip_CastProperties_UserData_B1":                  "Open the bitfield editor for user data in slot 1.",
+    "CellSpriteEditor_ToolTip_CastProperties_UserData_B2":                  "Open the bitfield editor for user data in slot 2.",
+    "CellSpriteEditor_ToolTip_CastProperties_UserData_B3":                  "Open the bitfield editor for user data in slot 3.",
+    "CellSpriteEditor_ToolTip_CastProperties_UserData_Callback":            "Toggle callback flag (consult with the programmer).",
+
+
+    "Common -------------------------------------------------------------": "--------------------------------------------------------------------",
+
+    "Common_Caption_OutputDirectory":                                       "Choose an output directory...",
+
+    "Common_Column_Name":                                                   "Name",
+    "Common_Column_CropID":                                                 "Crop ID",
+    "Common_Column_PictureID":                                              "Picture ID",
+    "Common_Column_Type":                                                   "Type",
+
+    "Common_Filter_SupportedImageFiles":                                    "All Supported Image Files|*.bmp;*.jpg;*.jpeg;*.jpe;*.jfif;*.gif;*.tga;*.png;*.pic;*.pix;*.tm2;*.iff;*.rla;*.pvr;*.svr;*.gvr;*.xvr;*.dds|BMP (*.bmp)|*.bmp|JPEG (*.jpg; *.jpeg; *.jpe; *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|TGA (*.tga)|*.tga|PNG (*.png)|*.png|Softimage PIC (*.pic)|*.pic|Alias PIX (*.pix)|*.pix|Maya IFF (*.iff)|*.iff|RLA (*.rla)|*.rla|Dreamcast PVR (*.pvr)|*.pvr|PlayStation 2 SVR (*.svr)|*.svr|PlayStation 2 TIM (*.tm2)|*.tm2|GameCube GVR (*.gvr)|*.gvr|Xbox XVR (*.xvr)|*.xvr|DirectDraw Surface (*.dds)|*.dds|All Files (*.*)|*.*||",
+    "Common_Filter_TGA":                                                    "TGA (*.tga)|*.tga||",
+    
+    "Common_Menu_PluginTools":                                              "Plugin &Tools (&T)",
+
+    "Common_Message_CreateDirectoryError":                                  "Failed to create directory...",
+    "Common_Message_SaveError":                                             "An error occurred whilst saving...",
+
+    "Common_Misc_All":                                                      "All",
+    "Common_Misc_AllVertices":                                              "All Vertices",
+    "Common_Misc_BottomLeft":                                               "Bottom Left",
+    "Common_Misc_BottomRight":                                              "Bottom Right",
+    "Common_Misc_CropTools":                                                "Crop Tools",
+    "Common_Misc_Hide":                                                     "Hide",
+    "Common_Misc_MainTools":                                                "Main Tools",
+    "Common_Misc_StageTools":                                               "Stage Tools",
+    "Common_Misc_Material":                                                 "Material",
+    "Common_Misc_Pattern":                                                  "Pattern",
+    "Common_Misc_PlaybackControls":                                         "Playback Controls",
+    "Common_Misc_KeyframeFilter":                                           "Keyframe Filter",
+    "Common_Misc_RZ":                                                       "Rotation (RZ)",
+    "Common_Misc_SX":                                                       "Scale X (SX)",
+    "Common_Misc_SY":                                                       "Scale Y (SY)",
+    "Common_Misc_SXY":                                                      "Scale X/Y (SXY)",
+    "Common_Misc_TopLeft":                                                  "Top Left",
+    "Common_Misc_TopRight":                                                 "Top Right",
+    "Common_Misc_TRS":                                                      "Transform (TRS)",
+    "Common_Misc_TX":                                                       "X (TX)",
+    "Common_Misc_TY":                                                       "Y (TY)",
+    "Common_Misc_TXY":                                                      "X/Y (TXY)",
+    "Common_Misc_UserData":                                                 "User Data",
+    "Common_Misc_UserData1":                                                "User Data 1",
+    "Common_Misc_UserData2":                                                "User Data 2",
+    "Common_Misc_UserData3":                                                "User Data 3",
+    "Common_Misc_ViewTools":                                                "View Tools",
+
+
+    "CropPropertyEdit ---------------------------------------------------": "--------------------------------------------------------------------",
+    
+    "CropPropertyEdit_PluginName":                                          "C&rop Properties... (&R)",
+
+
+    "CseConfig ----------------------------------------------------------": "--------------------------------------------------------------------",
+    
+    "CseConfig_Caption_ChangingActualResolution":                           "Changing Actual Resolution",
+    "CseConfig_Caption_ProjectSetup":                                       "Project Setup...",
+    
+    "CseConfig_Message_ChangingActualResolution":                           "The co-ordinates of casts and their X and Y transforms will remain as they are, even after changing the actual device resolution. Are you sure you want to continue?",
+
+
+    "CseCore ------------------------------------------------------------": "--------------------------------------------------------------------",
+    
+    "CseCore_Caption_AnimationBank_CopyAnimation":                          "Copy Animation",
+    
+    "CseCore_Message_AnimationBank_CopyAnimation":                          "Failed to copy animation ID: %d",
+    
+    "CseCore_Misc_AnimationBank_Copy":                                      "Copy of ",
+    "CseCore_Misc_AnimationBank_GeneratedBank":                             "Generated Animation Bank",
+
+
+    "CseDialog ----------------------------------------------------------": "--------------------------------------------------------------------",
+    
+    "CseDialog_Caption_AnimationBank_DeleteBank":                           "Delete Animation Bank",
+    "CseDialog_Caption_AnimationBank_SetEndFrame":                          "Set End Frame",
+    "CseDialog_Caption_AnimationBank_SetEndFrameAuto":                      "Set End Frame (Auto)",
+    "CseDialog_Caption_CastInstanceEditor_ChangeReferenceCast":             "Change Reference Cast",
+    "CseDialog_Caption_FontList_EditText":                                  "Edit Text [%s]",
+    "CseDialog_Caption_GridOptions_InvalidGridSize":                        "Invalid Grid Size",
+    "CseDialog_Caption_OffsetOptions":                                      "Offset Options",
+
+    "CseDialog_Message_AnimationBank_DeleteBank":                           "Are you sure you want to delete this animation bank?",
+    "CseDialog_Message_AnimationBank_SetEndFrameAuto":                      "Do you want to automatically calculate the end frame for the selected animation bank?",
+    "CseDialog_Message_CastInstanceEditor_ChangeReferenceCast":             "You cannot reference an instance cast.",
+    "CseDialog_Message_FontNameTooLong":                                    "The font name is too long (32 character limit).",
+    "CseDialog_Message_GridOptions_InvalidGridSize":                        "The grid size must be set to 1 or higher.",
+    "CseDialog_Message_SpecifyFontName":                                    "Please specify a font name.",
+
+    "CseDialog_Field_AnimationBank_EndFrame":                               "End frame",
+
+    "CseDialog_Misc_AnimationBank_NewBank":                                 "NewAnimationBank",
+    "CseDialog_Misc_CastInstanceEditor_InvalidCastID":                      "(invalid cast ID)",
+
+    
+    "CseDuplicate -------------------------------------------------------": "--------------------------------------------------------------------",
+
+    "CseDuplicate_Misc_Copy":                                               "_Copy",
+    "CseDuplicate_Misc_CopyOrdinal":                                        "_Copy_(%d)",
+
+
+    "CseFile ------------------------------------------------------------": "--------------------------------------------------------------------",
+
+    "CseFile_Caption_LoadFont":                                             "Load Font...",
+    "CseFile_Caption_OpenProject":                                          "Open Project...",
+    "CseFile_Caption_SaveAs":                                               "Save As...",
+
+    "CseFile_Message_FontLoadError":                                        "Failed to load font: %s",
+    "CseFile_Message_InvalidTextureList":                                   "Invalid texture list file.",
+    "CseFile_Message_InvalidTextureListVersion":                            "The texture list file version is different.",
+    "CseFile_Message_InvalidProject":                                       "Invalid project file.",
+    "CseFile_Message_InvalidProjectVersion":                                "The project file version is different.",
+    "CseFile_Message_PictureAlreadyLoaded":                                 "The picture \"%s\" is already in the project and will not be loaded.",
+    "CseFile_Message_ProjectNotFound":                                      "Unable to locate project file.",
+    "CseFile_Message_ProjectLoadError":                                     "An error occurred whilst loading the project file.",
+    "CseFile_Message_TextureListLoadError":                                 "An error occurred whilst loading the texture list file.",
+    "CseFile_Message_TextureListNotFound":                                  "Texture list file not found.",
+
+
+    "CseOption ----------------------------------------------------------": "--------------------------------------------------------------------",
+    
+    "CseOption_Caption_ClearUndoHistory":                                   "Clear Undo History",
+    "CseOption_Caption_Options":                                            "CellSpriteEditor Options",
+
+    "CseOption_Message_ClearUndoHistory":                                   "Are you sure you want to clear undo history?",
+
+
+    "CseQuickSave -------------------------------------------------------": "--------------------------------------------------------------------",
+    
+    "CseQuickSave_Caption_DeleteQuickSave":                                 "Delete Quick Save",
+    "CseQuickSave_Caption_QuickSaveError":                                  "Quick Save Error",
+
+    "CseQuickSave_Message_DeleteQuickSave":                                 "Are you sure you want to delete this quick save?",
+
+    "CseQuickSave_Misc_Date":                                               "Date",
+    "CseQuickSave_Misc_File":                                               "File",
+    "CseQuickSave_Misc_Remarks":                                            "Remarks",
+    "CseQuickSave_Misc_Time":                                               "Time",
+
+
+    "CseUndo ------------------------------------------------------------": "--------------------------------------------------------------------",
+    
+    "CseUndo_Misc_ProjectStack":                                            "Project Stack %05d",
+
+
+    "FileRender ---------------------------------------------------------": "--------------------------------------------------------------------",
+    
+    "FileRender_Caption_Common":                                            "Export Stage to Image Sequence...",
+
+    "FileRender_Message_StageCaptureError":                                 "Failed to capture stage surface...",
+
+    "FileRender_Misc_Progress":                                             "Exporting (%d/%d)... [%s]",
+
+    "FileRender_PluginName":                                                "&Export Stage to Image Sequence...",
+
+
+    "PlaneText ----------------------------------------------------------": "--------------------------------------------------------------------",
+    
+    "PlaneText_PluginName":                                                 "Plain &Text...",
+
+
+    "StageAccess --------------------------------------------------------": "--------------------------------------------------------------------",
+
+    "StageAccess_Common_Caption":                                           "Export Stage to Texture with Alpha...",
+    "StageAccess_PluginName":                                               "Export Stage to Texture with Al&pha..."
+}
