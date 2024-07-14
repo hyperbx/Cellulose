@@ -96,7 +96,7 @@ class ToolTipLocale
 	};
 
 public:
-	static void InstallCse()
+	static void Install()
 	{
 		for (int i = 0; i < 89; i++)
 			WRITE_MEMORY(0x44E094 + i * (sizeof(int) * 2), const char*, LocaleService::Localise(m_strToolTips[i]));

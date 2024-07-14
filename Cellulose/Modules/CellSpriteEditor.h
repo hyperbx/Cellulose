@@ -332,16 +332,33 @@ public:
 
 	static void InstallLocales()
 	{
-		LocaleService::Localise(0x413EE5, "CellSpriteEditor_Menu_AnimationBank_None");
-		LocaleService::Localise(0x413F4B, "CellSpriteEditor_Menu_AnimationBank_BankEntry");
-		LocaleService::LocaliseRaw(0x46270C, "CellSpriteEditor_Menu_AnimationBank_ChangeBank");
-
+		LocaleService::Localise(0x40181A, "CellSpriteEditor_Menu_Export");
 		LocaleService::Localise(0x402D38, "CellSpriteEditor_Caption_Backstage_PriorityDisplay");
+		LocaleService::Localise(0x407E21, "Common_Misc_UserData1");
+		LocaleService::Localise(0x407E81, "Common_Misc_UserData2");
+		LocaleService::Localise(0x407EE1, "Common_Misc_UserData3");
+		LocaleService::Localise(0x408879, "CellSpriteEditor_Caption_CastProperties_Caption");
+		LocaleService::Localise(0x40899A, "CellSpriteEditor_Caption_CastProperties_Caption");
+		LocaleService::Localise(0x4089EF, "CellSpriteEditor_Caption_CastProperties_PropertiesForCast");
+		LocaleService::Localise(0x408A2D, "CellSpriteEditor_Caption_CastProperties_PropertiesForCasts");
+		LocaleService::Localise(0x408C75, "Common_Column_PictureID");
+		LocaleService::Localise(0x408C8B, "Common_Column_CropID");
+		LocaleService::Localise(0x4091B4, "CellSpriteEditor_Message_CropList_CropNotFound");
+		LocaleService::Localise(0x40A0A7, "CellSpriteEditor_Caption_CropList_Caption");
+		LocaleService::Localise(0x40A0F8, "CellSpriteEditor_Caption_CropList_CropsForCast");
+		LocaleService::Localise(0x40A134, "CellSpriteEditor_Caption_CropList_Caption");
+		LocaleService::Localise(0x40D679, "CellSpriteEditor_Caption_Timeline_CopyKey");
+		LocaleService::Localise(0x40D770, "CellSpriteEditor_Message_Timeline_CopyKey");
+		LocaleService::Localise(0x40DB34, "CellSpriteEditor_Message_Timeline_CopyKey");
+		LocaleService::Localise(0x40E847, "CellSpriteEditor_Misc_Timeline_Frame");
+		LocaleService::Localise(0x40E84C, "CellSpriteEditor_Caption_Timeline_MoveToFrame");
 		LocaleService::Localise(0x4129C5, "CellSpriteEditor_Misc_Backstage_SceneInfo");
 		LocaleService::Localise(0x4129F3, "CellSpriteEditor_Misc_Backstage_NoSceneInfo");
 		LocaleService::Localise(0x413594, "CellSpriteEditor_Caption_Backstage_RenameScene");
 		LocaleService::Localise(0x413599, "CellSpriteEditor_Message_Backstage_SceneRenameError");
 		LocaleService::Localise(0x4135DE, "CellSpriteEditor_Caption_Backstage_RenameFolder");
+		LocaleService::Localise(0x413EE5, "CellSpriteEditor_Menu_AnimationBank_None");
+		LocaleService::Localise(0x413F4B, "CellSpriteEditor_Menu_AnimationBank_BankEntry");
 		LocaleService::Localise(0x414850, "CellSpriteEditor_Caption_Backstage_CopyCastParameters");
 		LocaleService::Localise(0x414855, "CellSpriteEditor_Message_Backstage_TwoOrMoreCastsSelected");
 		LocaleService::Localise(0x414866, "CellSpriteEditor_Caption_Backstage_CopyCastParameters");
@@ -350,28 +367,7 @@ public:
 		LocaleService::Localise(0x415053, "CellSpriteEditor_Message_Backstage_RootFolderDuplicateError");
 		LocaleService::Localise(0x4154AD, "CellSpriteEditor_Message_Backstage_SelectCastInstantiate");
 		LocaleService::Localise(0x4154D9, "CellSpriteEditor_Message_Backstage_CastInstantiateError");
-		LocaleService::LocaliseRaw(0x46278C, "CellSpriteEditor_Message_Backstage_NoCastSelected");
-		LocaleService::LocaliseRaw(0x4627E0, "CellSpriteEditor_Message_Backstage_NoCastsToPaste");
-		LocaleService::LocaliseRaw(0x462800, "CellSpriteEditor_Caption_Backstage_PasteCastParameters");
-		LocaleService::LocaliseRaw(0x462818, "CellSpriteEditor_Message_Backstage_SelectCast");
-		LocaleService::LocaliseRaw(0x4628C8, "CellSpriteEditor_Caption_Backstage_CreateInstance");
-
-		LocaleService::Localise(0x408879, "CellSpriteEditor_Caption_CastProperties_Caption");
-		LocaleService::Localise(0x40899A, "CellSpriteEditor_Caption_CastProperties_Caption");
-		LocaleService::Localise(0x4089EF, "CellSpriteEditor_Caption_CastProperties_PropertiesForCast");
-		LocaleService::Localise(0x408A2D, "CellSpriteEditor_Caption_CastProperties_PropertiesForCasts");
-		LocaleService::Localise(0x40A134, "CellSpriteEditor_Caption_CastProperties_PropertiesForCasts");
-
-		LocaleService::Localise(0x408C75, "Common_Column_PictureID");
-		LocaleService::Localise(0x408C8B, "Common_Column_CropID");
-		LocaleService::Localise(0x4091B4, "CellSpriteEditor_Message_CropList_CropNotFound");
-		LocaleService::Localise(0x40A0A7, "CellSpriteEditor_Caption_CropList_Caption");
-		LocaleService::Localise(0x40A0F8, "CellSpriteEditor_Caption_CropList_CropsForCast");
-		LocaleService::Localise(0x40A134, "CellSpriteEditor_Caption_CropList_Caption");
-
-		LocaleService::Localise(0x41FFCE, "Common_Filter_SupportedImageFiles");
-		LocaleService::Localise(0x436BDF, "Common_Filter_TGA");
-
+		LocaleService::Localise(0x41AAEF, "CellSpriteEditor_Caption_Timeline_MoveToFrame");
 		LocaleService::Localise(0x41ACD9, "CellSpriteEditor_Column_FontList_Code");
 		LocaleService::Localise(0x41AD04, "CellSpriteEditor_Column_FontList_Char");
 		LocaleService::Localise(0x41AD2E, "Common_Column_PictureID");
@@ -383,8 +379,6 @@ public:
 		LocaleService::Localise(0x41BFED, "CellSpriteEditor_Caption_FontList_CreateFont");
 		LocaleService::Localise(0x41C557, "CellSpriteEditor_Caption_FontList_DeleteFont");
 		LocaleService::Localise(0x41C53A, "CellSpriteEditor_Message_FontList_DeleteFont");
-		LocaleService::LocaliseRaw(0x462BD8, "CellSpriteEditor_Caption_FontList_RenameFont");
-
 		LocaleService::Localise(0x41DD6A, "CellSpriteEditor_Misc_NewProject_IncludeTextureListInProject");
 		LocaleService::Localise(0x41DFAB, "CellSpriteEditor_Misc_NewProject_IncludeTextureListInProject");
 		LocaleService::Localise(0x41E0D0, "CellSpriteEditor_Misc_NewProject_CreateTextureListInDir");
@@ -395,27 +389,16 @@ public:
 		LocaleService::Localise(0x41ED15, "CellSpriteEditor_Misc_NewProject_ProjectType");
 		LocaleService::Localise(0x41EEAD, "CellSpriteEditor_Misc_NewProject_TextureListType");
 		LocaleService::Localise(0x41EFB5, "CellSpriteEditor_Message_NewProject_OverwriteFile");
-
 		LocaleService::Localise(0x41F646, "CellSpriteEditor_Column_PictureList_FileName");
 		LocaleService::Localise(0x41F676, "Common_Column_Type");
 		LocaleService::Localise(0x41F6A6, "CellSpriteEditor_Column_PictureList_Format");
 		LocaleService::Localise(0x41F6D4, "CellSpriteEditor_Column_PictureList_Width");
 		LocaleService::Localise(0x41F702, "CellSpriteEditor_Column_PictureList_Height");
-		LocaleService::LocaliseRaw(0x4622EC, "CellSpriteEditor_Column_PictureList_Image");
-
+		LocaleService::Localise(0x41FFCE, "Common_Filter_SupportedImageFiles");
 		LocaleService::Localise(0x422127, "CellSpriteEditor_Misc_Picture_NoPictures");
-
-		PlaybackControlsLocale::Install();
-
-		LocaleService::Localise(0x40D679, "CellSpriteEditor_Caption_Timeline_CopyKey");
-		LocaleService::Localise(0x40E847, "CellSpriteEditor_Misc_Timeline_Frame");
-		LocaleService::Localise(0x40E84C, "CellSpriteEditor_Caption_Timeline_MoveToFrame");
-		LocaleService::Localise(0x41AAEF, "CellSpriteEditor_Caption_Timeline_MoveToFrame");
 		LocaleService::Localise(0x42E077, "CellSpriteEditor_Caption_Timeline_FunctionCurve");
 		LocaleService::Localise(0x42E6C0, "CellSpriteEditor_Caption_Timeline_FunctionCurve");
 		LocaleService::Localise(0x42E6F0, "CellSpriteEditor_Caption_Timeline_DopeSheet");
-		LocaleService::Localise(0x40D770, "CellSpriteEditor_Message_Timeline_CopyKey");
-		LocaleService::Localise(0x40DB34, "CellSpriteEditor_Message_Timeline_CopyKey");
 		LocaleService::Localise(0x42EC3C, "CellSpriteEditor_Node_Timeline_SelectedCasts");
 		LocaleService::Localise(0x42EBDD, "CellSpriteEditor_Node_Timeline_SelectedCastsLocked");
 		LocaleService::Localise(0x42ED9C, "Common_Misc_TRS");
@@ -436,18 +419,6 @@ public:
 		LocaleService::Localise(0x42F1E5, "Common_Misc_UserData1");
 		LocaleService::Localise(0x42F22C, "Common_Misc_UserData2");
 		LocaleService::Localise(0x42F273, "Common_Misc_UserData3");
-		LocaleService::LocaliseRaw(0x4624C0, "CellSpriteEditor_Message_Timeline_SelectKey");
-		LocaleService::LocaliseRaw(0x4624EC, "CellSpriteEditor_Message_Timeline_EmptyClipboard");
-		LocaleService::LocaliseRaw(0x462514, "CellSpriteEditor_Message_Timeline_PlaceMarker");
-		LocaleService::LocaliseRaw(0x46259C, "CellSpriteEditor_Caption_Timeline_PasteKey");
-		LocaleService::LocaliseRaw(0x4625D0, "CellSpriteEditor_Misc_Timeline_Frame");
-
-		ToolTipLocale::InstallCse();
-
-		LocaleService::Localise(0x40181A, "CellSpriteEditor_Menu_Export");
-		LocaleService::Localise(0x407E21, "Common_Misc_UserData1");
-		LocaleService::Localise(0x407E81, "Common_Misc_UserData2");
-		LocaleService::Localise(0x407EE1, "Common_Misc_UserData3");
 		LocaleService::Localise(0x4343D0, "Common_Misc_MainTools");
 		LocaleService::Localise(0x4343E0, "Common_Misc_ViewTools");
 		LocaleService::Localise(0x4343EC, "Common_Misc_StageTools");
@@ -458,8 +429,25 @@ public:
 		LocaleService::Localise(0x4368F2, "CellSpriteEditor_Caption_TextureListExternal");
 		LocaleService::Localise(0x4368FD, "CellSpriteEditor_Caption_TextureListInternal");
 		LocaleService::Localise(0x436C25, "CellSpriteEditor_Caption_ExportStageToTexture");
+		LocaleService::Localise(0x436BDF, "Common_Filter_TGA");
 		LocaleService::Localise(0x460BF8, "CellSpriteEditor_Misc_ProgramExited");
+		LocaleService::LocaliseRaw(0x4622EC, "CellSpriteEditor_Column_PictureList_Image");
+		LocaleService::LocaliseRaw(0x4624C0, "CellSpriteEditor_Message_Timeline_SelectKey");
+		LocaleService::LocaliseRaw(0x4624EC, "CellSpriteEditor_Message_Timeline_EmptyClipboard");
+		LocaleService::LocaliseRaw(0x462514, "CellSpriteEditor_Message_Timeline_PlaceMarker");
+		LocaleService::LocaliseRaw(0x46259C, "CellSpriteEditor_Caption_Timeline_PasteKey");
+		LocaleService::LocaliseRaw(0x4625D0, "CellSpriteEditor_Misc_Timeline_Frame");
+		LocaleService::LocaliseRaw(0x46270C, "CellSpriteEditor_Menu_AnimationBank_ChangeBank");
+		LocaleService::LocaliseRaw(0x46278C, "CellSpriteEditor_Message_Backstage_NoCastSelected");
+		LocaleService::LocaliseRaw(0x4627E0, "CellSpriteEditor_Message_Backstage_NoCastsToPaste");
+		LocaleService::LocaliseRaw(0x462800, "CellSpriteEditor_Caption_Backstage_PasteCastParameters");
+		LocaleService::LocaliseRaw(0x462818, "CellSpriteEditor_Message_Backstage_SelectCast");
+		LocaleService::LocaliseRaw(0x4628C8, "CellSpriteEditor_Caption_Backstage_CreateInstance");
+		LocaleService::LocaliseRaw(0x462BD8, "CellSpriteEditor_Caption_FontList_RenameFont");
 		LocaleService::LocaliseRaw(0x463414, "Common_Menu_PluginTools");
+
+		PlaybackControlsLocale::Install();
+		ToolTipLocale::Install();
 
 		// Backstage: don't display "(None/None)" for scenes without animation banks.
 		WRITE_MEMORY(0x462690, uint8_t, 0);
