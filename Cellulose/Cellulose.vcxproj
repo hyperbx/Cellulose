@@ -74,7 +74,7 @@
     <PostBuildEvent>
       <Command>move "$(TargetPath)" "$(TargetDir)d3d8.dll"
 copy /Y "$(ProjectDir)Cellulose.ini" "$(TargetDir)Cellulose.ini"
-powershell -ExecutionPolicy Bypass -Command "cd \"$(ProjectDir)Resources\" ; .\link.ps1 -Configuration $(Configuration)"</Command>
+powershell -ExecutionPolicy Bypass -Command "cd \"$(ProjectDir)Resources\" ; .\make.ps1 -Configuration $(Configuration)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -103,7 +103,7 @@ powershell -ExecutionPolicy Bypass -Command "cd \"$(ProjectDir)Resources\" ; .\l
     <PostBuildEvent>
       <Command>move "$(TargetPath)" "$(TargetDir)d3d8.dll"
 copy /Y "$(ProjectDir)Cellulose.ini" "$(TargetDir)Cellulose.ini"
-powershell -ExecutionPolicy Bypass -Command "cd \"$(ProjectDir)Resources\" ; .\link.ps1 -Configuration $(Configuration)"</Command>
+powershell -ExecutionPolicy Bypass -Command "cd \"$(ProjectDir)Resources\" ; .\make.ps1 -Configuration $(Configuration)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
