@@ -10,4 +10,9 @@ public:
 	inline static bool IsModernVisualStyle = true;
 
 	static void Read();
+
+	static bool IsJapanese()
+	{
+		return Language == "ja-JP";
+	}
 };

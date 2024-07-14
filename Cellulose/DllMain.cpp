@@ -16,7 +16,14 @@
 
 static void Init()
 {
+	Configuration::Read();
+
 	CellSpriteEditor::Init();
+
+	if (Configuration::IsJapanese())
+		return;
+
+	LocaleService::Read(std::format("res\\{}\\Internal.json", Configuration::Language));
 
 	CellSpriteEditor::InstallLocales();
 	CseConfig::InstallLocales();
@@ -33,6 +40,9 @@ static void Init()
 
 static void OnPluginLoad(const char* in_pFileName)
 {
+	if (Configuration::IsJapanese())
+		return;
+
 	if (!strcmp(in_pFileName, "CropPropertyEdit.dll"))
 		CropPropertyEdit::InstallLocales();
 
@@ -60,9 +70,6 @@ BOOL WINAPI DllMain(HINSTANCE in_hInstance, DWORD in_fdwReason, LPVOID in_lpvRes
 	{
 		case DLL_PROCESS_ATTACH:
 		{
-			Configuration::Read();
-			LocaleService::Read(std::format("res\\{}\\Internal.json", Configuration::Language));
-
 			Init();
 
 			INSTALL_HOOK(LoadPlugin);
