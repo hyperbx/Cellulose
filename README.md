@@ -2,5 +2,6 @@
 Extensions for CellSpriteEditor v1.51.03h.
 
 # Features
-- English (United Kingdom) localisation
-- Modern browser dialogs
+- English localisation.
+- Modern browser dialogs.
+- Modern visual style.

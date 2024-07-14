@@ -327,7 +327,8 @@ public:
 		INSTALL_HOOK(MyCheckDlgButton);
 		INSTALL_HOOK(MyIsDlgButtonChecked);
 
-		INSTALL_HOOK(CWinApp_InitApplicationHook);
+		if (Configuration::IsModernVisualStyle)
+			INSTALL_HOOK(CWinApp_InitApplicationHook);
 	}
 
 	static void InstallLocales()

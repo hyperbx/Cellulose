@@ -13,26 +13,26 @@
       <Filter>Dependencies\Detours\include</Filter>
     </ClInclude>
     <ClInclude Include="Locales\PlaybackControlsLocale.h" />
-    <ClInclude Include="CellSpriteEditor.h" />
-    <ClInclude Include="CseDialog.h" />
-    <ClInclude Include="CseFile.h" />
-    <ClInclude Include="CropPropertyEdit.h" />
-    <ClInclude Include="FileRender.h" />
     <ClInclude Include="Locales\ToolTipLocale.h" />
-    <ClInclude Include="PlaneText.h" />
-    <ClInclude Include="StageAccess.h" />
     <ClInclude Include="Dependencies\INIReader.h" />
     <ClInclude Include="Configuration.h" />
     <ClInclude Include="ResourceRedirector.h" />
     <ClInclude Include="DialogHelpers.h" />
-    <ClInclude Include="CseConfig.h" />
-    <ClInclude Include="CseCore.h" />
-    <ClInclude Include="CseDuplicate.h" />
-    <ClInclude Include="CseOption.h" />
-    <ClInclude Include="CseQuickSave.h" />
-    <ClInclude Include="CseUndo.h" />
     <ClInclude Include="LocaleService.h" />
     <ClInclude Include="Dependencies\json.h" />
+    <ClInclude Include="Modules\CropPropertyEdit.h" />
+    <ClInclude Include="Modules\CseConfig.h" />
+    <ClInclude Include="Modules\CseCore.h" />
+    <ClInclude Include="Modules\CseDuplicate.h" />
+    <ClInclude Include="Modules\CseOption.h" />
+    <ClInclude Include="Modules\CseQuickSave.h" />
+    <ClInclude Include="Modules\CseUndo.h" />
+    <ClInclude Include="Modules\FileRender.h" />
+    <ClInclude Include="Modules\CellSpriteEditor.h" />
+    <ClInclude Include="Modules\CseDialog.h" />
+    <ClInclude Include="Modules\CseFile.h" />
+    <ClInclude Include="Modules\PlaneText.h" />
+    <ClInclude Include="Modules\StageAccess.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DllMain.cpp" />
