@@ -1,5 +1,5 @@
 # Cellulose
-Extensions for SEGA's proprietary CellSpriteEditor SDK.
+Extensions for SEGA's proprietary CellSpriteEditor tool.
 
 # Features
 - Bypass license authentication.
