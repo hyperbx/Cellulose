@@ -13,4 +13,4 @@ Extensions for SEGA's proprietary CellSpriteEditor tool.
 - Windows 10 SDK (10.0.19041.0)
 
 ### Running
-- [CellSpriteEditor (1.51.03h)](https://archive.org/details/cell-sprite-editor-sdk)
+- [CellSpriteEditor](https://archive.org/details/cell-sprite-editor-sdk) (1.51.03h)
